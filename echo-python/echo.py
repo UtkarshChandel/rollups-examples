@@ -23,12 +23,14 @@ logger.info(f"HTTP rollup_server url is {rollup_server}")
 
 def handle_advance(data):
     logger.info(f"Received advance request data {data}")
-    jsonFormatted = json.loads(data)
-    output = "claim not processed"
-    if jsonFormatted["accident"] && jsonFormatted["driverError"]:
-        output = "claim not processed"
+
+    # jsonFormatted = json.loads(data)
+    # output = "claim not processed"
+    # if jsonFormatted["accident"] && jsonFormatted["driverError"]:
+    #     output = "claim not processed"
     
-    logger.info("Adding notice as "+output)
+    logger.info("Adding notice as ===============>>>>>>============== ")
+    output = data;
     notice = {"payload": output}
     response = requests.post(rollup_server + "/notice", json=notice)
     logger.info(f"Received notice status {response.status_code} body {response.content}")
