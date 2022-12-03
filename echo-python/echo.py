@@ -29,7 +29,7 @@ def handle_advance(data):
     # if jsonFormatted["accident"] && jsonFormatted["driverError"]:
     #     output = "claim not processed"
     
-    logger.info("Adding notice as ===============>>>>>>============== ")
+    logger.info("Adding notice as ===============>>>>>>============ ")
     output = data;
     notice = {"payload": output}
     response = requests.post(rollup_server + "/notice", json=notice)
